@@ -193,6 +193,7 @@ def send_img_windows_gui():
             file_upload_button.click()
             autoit.win_wait_active("Open", 5)
             if autoit.win_exists("Open"):
+                time.sleep(0.5)
                 autoit.control_set_text("Open", "Edit1", imgs[i])
                 autoit.control_send('Open', 'Edit1', "{ENTER}")
             image_sent = False
