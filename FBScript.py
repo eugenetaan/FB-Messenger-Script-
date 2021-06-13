@@ -131,13 +131,9 @@ def send_img_windows_gui():
             file_upload_button.click()
             autoit.win_wait_active("Open", 5)
             if autoit.win_exists("Open"):
+                time.sleep(0.5)
                 autoit.control_set_text("Open", "Edit1", imgs[i])
                 autoit.control_send('Open', 'Edit1', "{ENTER}")
-            # try:
-            #     send_button_clickable = WebDriverWait(driver, 20).until(
-            #         EC.element_to_be_clickable((By.CSS_SELECTOR, 'button[value="1"][type="submit"]')))
-            # except TimeoutException:
-            #     return False
             image_sent = False
             while not image_sent: # testing using while loop to address auto it not sending text into file explorer
                 try:
@@ -215,6 +211,7 @@ def click_on_messenger_convo_history():
         close_search()
         return False
 
+ #For situations where you would change the name of the user for each message
 def generate_dynamic_text(promotion_text, username):
     return_promo_text = []
     for sentence in promotion_text:
@@ -413,8 +410,8 @@ for i in range(len(tracker['Name'])):
             # send text
             chatbox = driver.find_element_by_css_selector('textarea[placeholder="Write a reply…"]')
             time.sleep(1)
-            enter_text(generate_dynamic_text(promotion_text, tracker['Name'][i]))
-            # enter_text(promotion_text)
+            #enter_text(generate_dynamic_text(promotion_text, tracker['Name'][i]))
+            enter_text(promotion_text)
             chatbox.send_keys(Keys.RETURN)
             # send image
             if not send_img_windows_gui():
