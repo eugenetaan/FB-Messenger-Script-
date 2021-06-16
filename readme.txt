@@ -5,7 +5,7 @@ The script is split into 2 parts, generation of processed CSV and broadcasting.
 In order to execute this broadcast smoothly, you should have a fair understanding of python and selenium, as well as pandas.
 Also a basic understanding of HTML, CSS structure is good to have but not neccessary
 
-If unsure please google / read documentation.
+If unsure please read the code or google / read documentation.
 
 For equipment a windows machine would be better as the windows version of the code is able to directly control the GUI while Mac version clicks on coordinates on the screen,
 Hence for different macs coordinates will need to be rewritten.
