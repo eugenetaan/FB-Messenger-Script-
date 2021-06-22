@@ -1,9 +1,12 @@
+import os
+
 chromedriver_path = 'C:/Program Files/chromedriver'
-OS = 'Windows'       # accepts Mac and Windows os (Capital - case sensitive)
+OS = 'Windows'       # accepts Mac and Windows os (case sensitive)
 QR_Code = False      # For non campaign broadcast
-testing = False         # Use bobs cafe to test
-manual_mode = False      # For instances where unable to automate typing into textbox, sending images (eg Aria Autocomplete fields)
-user = "YK"             # Diff user acc to switch between YiKai and own acc
+testing = False           # Use bobs cafe to test
+manual_mode = False     # For instances where unable to automate typing into textbox, sending images (eg Aria Autocomplete fields)
+user = "Eugene"          # Diff user acc to switch between YiKai and own acc
+chatbox_element = 'textarea'  # accept textarea and div (div chatbox is unable to linebreak)
 
 #-------For Desktop with D drive -------------------------------------------------------------------------------------
 # template for Processed CSVs: f'D:/Pycharm Projects/DataSciCourse/venv/Processed_CSVs/{merchant_name}.csv'
@@ -16,16 +19,19 @@ user = "YK"             # Diff user acc to switch between YiKai and own acc
 #QR code location : 'C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg'
 
 # For csv_cleaning file, leave blank if not in use
-original_csvs = []
+original_csvs = ['C:\\Users\\eugen\\Downloads\\hxl.csv']
 
-merchant_name = 'Partea'
+merchant_name = 'Ichiho'
 if testing == False:
-    # customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Processed_CSVs/{merchant_name}.csv' #if first time use customer file location template, else use save_to_file template
-    customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
-    save_to_file = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
+    if os.path.isfile(f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'):
+        customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
+    else:
+        customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Processed_CSVs/{merchant_name}.csv' #if first time use customer file location template, else use save_to_file template
+    save_to_file = 'Testing.csv'
+    # save_to_file = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
 else:
     save_to_file = 'Testing.csv'
-customer_sending_limit = 150
+customer_sending_limit = 90
 
 #----------------- Message Contents and Xpaths Below ------------------------------------------------------------------
 
@@ -46,15 +52,10 @@ if user == 'YK': # run FB Script
         imgs = ['C:\\Users\\eugen\\Downloads\\ChunyangPromo.png','C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
 
     else:
-        promotion_text = [
-        'Special Promotion To The Best Dad In The World!'
-        '',
-        '[Limited Time Offer]',
-        'Enjoy our BUY 1 GET 1 FREE on our Golden Salted Egg Milk Tea Shake- perfect for you and your Super Hero.',
-        '',
-        'Available on 20th June 2021 in Suntec and Tampines outlets only.'
+        promotion_text = ['1. Earn 10% cashback when you dine-in at HXL that is valid for buffet and alacarte \n 2. Those with cashback that was expired during 1st May - 20th June will be given extended expiry date until 21st July.'
+
         ]
-        imgs = ['C:\\Users\\eugen\\Downloads\\parteapromo.png']
+        imgs = ['C:\\Users\\eugen\\Downloads\\hxl.jpeg']
 
 #-----------------------------------------------------------------------------------------------------------------------
 elif user=='Eugene':  # run FB Script New layout
@@ -78,9 +79,9 @@ elif user=='Eugene':  # run FB Script New layout
         imgs = ['C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
     else:
         promotion_text = [
-            '',
+            'Testing',
                           ]
-        imgs = []
+        imgs = ['C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
 
 #------------------------------------------------Xpaths -----------------------------------------------------------
 #RMB TO CHANGE Check duplicate xpath in f string
@@ -97,7 +98,7 @@ first_user = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/di
 message_history_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[2]'
 convo_description_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[1]'
 
-# default ie for bobs cafe
+# default
 # file_upload_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div/div[3]/div[1]/div'
 
 #HXL

@@ -360,7 +360,7 @@ for i in range(len(tracker['Name'])):
             else:
                 to_use = no_of_duplicates_file
         else:
-            to_use = no_of_duplicates_file
+            to_use = no_of_duplicates_fb
 
 
 
@@ -403,13 +403,20 @@ for i in range(len(tracker['Name'])):
                 qrCodeImg.save('temp_qr_code.jpg')
 
             if not manual_mode:
-                if wait_css_selector('textarea[placeholder="Write a reply…"]'):
-                    # send text
+                # if wait_css_selector('textarea[placeholder="Write a reply…"]'):
+                if chatbox_element == "textarea" and wait_css_selector('textarea[placeholder="Write a reply…"]'):
                     chatbox = driver.find_element_by_css_selector('textarea[placeholder="Write a reply…"]')
+                    time.sleep(1)
                     enter_text(promotion_text)
-                    # enter_text(generate_dynamic_text(promotion_text, tracker['Name'][i]))
                     chatbox.send_keys(Keys.RETURN)
-                    # send image
+
+                elif chatbox_element == "div" and wait_css_selector('div[aria-label="Write a reply…"]'):
+                    chatbox = driver.find_element_by_css_selector('div[aria-label="Write a reply…"]')
+                    time.sleep(1)
+                    # enter_text(generate_dynamic_text(promotion_text, tracker['Name'][i]))
+                    enter_text(promotion_text)
+                    chatbox.send_keys(Keys.RETURN)
+
                 else:
                     continue
             if OS == 'Windows':
@@ -446,14 +453,18 @@ for i in range(len(tracker['Name'])):
 
     # send  image and text
     if not manual_mode:
-        if wait_css_selector('textarea[placeholder="Write a reply…"]'):
-            # send text
+        if chatbox_element == "textarea" and wait_css_selector('textarea[placeholder="Write a reply…"]'):
             chatbox = driver.find_element_by_css_selector('textarea[placeholder="Write a reply…"]')
+            time.sleep(1)
+            enter_text(promotion_text)
+            chatbox.send_keys(Keys.RETURN)
+
+        elif chatbox_element == "div" and wait_css_selector('div[aria-label="Write a reply…"]'):
+            chatbox = driver.find_element_by_css_selector('div[aria-label="Write a reply…"]')
             time.sleep(1)
             # enter_text(generate_dynamic_text(promotion_text, tracker['Name'][i]))
             enter_text(promotion_text)
             chatbox.send_keys(Keys.RETURN)
-            # send image
         else:
             update_tracker('Cannot Enter Text into Text box', i)
             close_search()
