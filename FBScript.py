@@ -15,6 +15,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import autoit
+import pyautogui
 
 def test_input_bobs_cafe():
     d = { 'first_name' : ['Eugene', 'Ng', 'Xavier', "Yi Kai", 'Tin', 'Gabriel', 'Bai', 'Chih', 'Tim', 'Zhen Ye'], 'last_name' : [ 'Tan', 'Zheng Wei', 'Chin', 'Kong', 'En Hao', 'Lee', 'Shun Yao', 'Ying Ho', 'Lorenz', 'Neo'], 'token' : ['FB_V-12_6438e8dd-2988-45e7-9f64-d80f666fdd6b', 'FB_V-13_41934190-3835-476c-8753-0307f206abff', 'FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28',
@@ -210,6 +211,34 @@ def send_img_windows_gui():
                 send_button.click()
     return True
 
+def send_image_mac():
+    #file_upload_button = driver.find_element_by_xpath(file_input_xpath)
+    time.sleep(1) #allow some time for paperclip icon to go back to original position
+    if len(imgs) > 0:
+        print(token)
+        for img_path in imgs:
+            pyautogui.PAUSE = 1
+            pyautogui.leftClick(x=941, y=853) #click on clip icon to link file (below is non fullscreen coords)
+            #pyautogui.leftClick(x=794, y=771)
+            pyautogui.leftClick(x=986, y=269) #click search button on finder
+            #pyautogui.leftClick(x=883, y=270)
+            pyautogui.typewrite('temp_qr_code.jpg') #types img filename into finder
+            time.sleep(1.5)
+            pyautogui.leftClick(x=569, y=376) #clicks on first file
+            #pyautogui.leftClick(x=477, y=376)
+            pyautogui.leftClick(x=1060, y=657) #click on open button in finder
+            #pyautogui.leftClick(x=961, y=658)
+            time.sleep(1.5)
+        try:
+            send_button_clickable = WebDriverWait(driver, 20).until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, 'button[value="1"][type="submit"]')))
+        except TimeoutException:
+            close_search()
+            return False
+        send_button = driver.find_element_by_css_selector('button[value="1"][type="submit"]')
+        send_button.click()
+        return True
+
 def generate_dynamic_text(promotion_text, username):
     return_promo_text = []
     for sentence in promotion_text:
@@ -383,8 +412,12 @@ for i in range(len(tracker['Name'])):
                     # send image
                 else:
                     continue
-            if not send_img_windows_gui():
-                continue
+            if OS == 'Windows':
+                if not send_img_windows_gui():
+                    continue
+            elif OS == 'Mac':
+                if not send_image_mac():
+                    continue
 
             successfully_sent += 1
             if successfully_sent % 1 == 0:
@@ -425,9 +458,15 @@ for i in range(len(tracker['Name'])):
             update_tracker('Cannot Enter Text into Text box', i)
             close_search()
             continue
-    if not send_img_windows_gui():
-        update_tracker('Image cannot be sent', i)
-        continue
+
+    if OS == 'Windows':
+        if not send_img_windows_gui():
+            update_tracker('Image cannot be sent', i)
+            continue
+    elif OS == 'Mac':
+        if not send_image_mac():
+            update_tracker('Image cannot be sent', i)
+            continue
 
     #update tracker
     update_tracker(f'Successfully Sent on {date.today()}', i)
