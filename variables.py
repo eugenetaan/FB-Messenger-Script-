@@ -1,7 +1,6 @@
 import os
 
 chromedriver_path = 'C:/Program Files/chromedriver'
-<<<<<<< HEAD
 OS = 'Windows'       # accepts Mac and Windows os (case sensitive)
 QR_Code = False      # For non campaign broadcast
 testing = False           # Use bobs cafe to test
@@ -35,8 +34,7 @@ if testing == False:
         customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
     else:
         customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Processed_CSVs/{merchant_name}.csv' #if first time use customer file location template, else use save_to_file template
-    save_to_file = 'Testing.csv'
-    # save_to_file = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
+    save_to_file = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
 else:
     save_to_file = 'Testing.csv'
 customer_sending_limit = 90
