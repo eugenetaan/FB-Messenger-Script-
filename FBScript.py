@@ -360,7 +360,7 @@ for i in range(len(tracker['Name'])):
             else:
                 to_use = no_of_duplicates_file
         else:
-            to_use = no_of_duplicates_file
+            to_use = no_of_duplicates_fb
 
 
 
