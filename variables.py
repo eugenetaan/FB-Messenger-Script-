@@ -1,8 +1,8 @@
 chromedriver_path = 'C:/Program Files/chromedriver'
-QR_Code = True           # For non campaign broadcast
-testing = False          # Use bobs cafe to test
+QR_Code = False      # For non campaign broadcast
+testing = False         # Use bobs cafe to test
 manual_mode = False      # For instances where unable to automate typing into textbox, sending images (eg Aria Autocomplete fields)
-user = "YK"              # Diff user acc to switch between YiKai and own acc
+user = "YK"             # Diff user acc to switch between YiKai and own acc
 
 #-------For Desktop with D drive -------------------------------------------------------------------------------------
 # template for Processed CSVs: f'D:/Pycharm Projects/DataSciCourse/venv/Processed_CSVs/{merchant_name}.csv'
@@ -17,7 +17,7 @@ user = "YK"              # Diff user acc to switch between YiKai and own acc
 # For csv_cleaning file, leave blank if not in use
 original_csvs = []
 
-merchant_name = 'Chunyang'
+merchant_name = 'Partea'
 if testing == False:
     # customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Processed_CSVs/{merchant_name}.csv' #if first time use customer file location template, else use save_to_file template
     customers_file_location = f'C:/Users/eugen/PycharmProjects/FBMessengerScript/Tracker_in_progress/{merchant_name}_tracker.csv'
@@ -44,51 +44,16 @@ if user == 'YK': # run FB Script
                           '*Only redeemable for customers using Aimazing cashback',]
         imgs = ['C:\\Users\\eugen\\Downloads\\ChunyangPromo.png','C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
 
-        #-----------------ICHIHO---------------------------------------------------------
-        # promotion_text = ['New safety measures got you down? Turn that frown upside down with one of the following promotions!',
-        #                   '1) 10% off voucher for self-collection orders',
-        #                   '2) 20% off voucher for 2nd Donburi, 30% off voucher for 3rd and additional Donburi',
-        #                   '3) $88+ Family Package promotion, available for pre-order only (For next day collection/delivery) with last orders each day at 7:00 pm.',
-        #                   '',
-        #                   'Visit http://bit.ly/ichihofb or contact us at 8202 8168 to place your order!',
-        #                   '',
-        #                   'Just present the QR Code below to claim your voucher!',
-        #                   '',
-        #                   'Self-collection at our outlet:',
-        #                   '- 12 Kallang Ave, Aperia Mall, #02-07/08, 339511',
-        #                   '',
-        #                   '*Valid till 16 June',
-        #                   '*Customers may only redeem 1 promotion',
-        #                   '*Discount on Donburi will be applied on lower priced items',
-        #                   '*10% voucher for self-collection is not applicable for promotional packages',
-        #                   '*Promotion cannot be stacked with cashback',
-        #                   '*Exclusive of delivery and tax charges'
-        #                   ]
-        # imgs = ['C:\\Users\\eugen\\Downloads\\Ichiho.jpeg','C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
-
     else:
-        promotion_text = []
-        imgs = []
-
-    # RMB TO CHANGE Check duplicate xpath in code which uses f string
-    #for checking duplicates:
-    users_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[@]'
-
-    #for close search function:
-    exit_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div[1]/div/div[1]/div/div[1]/div/div/div/div/a'
-
-    #search button
-    search_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div[1]/div/div[1]/div/div[2]/div/div/div/div/div[3]/div'
-
-    #chat history first user
-    first_user = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div/div/div/li'
-
-    # messenger convo history
-    message_history_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[2]'
-    convo_description_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[1]'
-
-    # default
-    file_upload_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div/div/div[3]/div[1]/div/div'
+        promotion_text = [
+        'Special Promotion To The Best Dad In The World!'
+        '',
+        '[Limited Time Offer]',
+        'Enjoy our BUY 1 GET 1 FREE on our Golden Salted Egg Milk Tea Shake- perfect for you and your Super Hero.',
+        '',
+        'Available on 20th June 2021 in Suntec and Tampines outlets only.'
+        ]
+        imgs = ['C:\\Users\\eugen\\Downloads\\parteapromo.png']
 
 #-----------------------------------------------------------------------------------------------------------------------
 elif user=='Eugene':  # run FB Script New layout
@@ -111,30 +76,28 @@ elif user=='Eugene':  # run FB Script New layout
             ]
         imgs = ['C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
     else:
-        promotion_text = [ "Hi <Customer name>, in the light of the Covid-19 restrictions, we have extended your cashback expiry date to 13 August (Does not apply to Cashbacks expiring after 13 August). However, do note that this cashback can only be used for dine-in, not takeaways. We hope to see you soon!"
+        promotion_text = [
+            '',
                           ]
         imgs = []
 
-    #RMB TO CHANGE Check duplicate xpath in f string
-    # for checking duplicates:
-    users_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[@]'
+#------------------------------------------------Xpaths -----------------------------------------------------------
+#RMB TO CHANGE Check duplicate xpath in f string
+# for checking duplicates:
+users_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[@]'
 
-    # for close search function:
-    exit_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[1]/div/div/div/a'
+# for close search function:
+exit_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[1]/div/div/div/a/i'
 
-    # chat history first user
-    first_user = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li'
+# chat history first user
+first_user = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[1]'
 
+# messenger convo history
+message_history_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[2]'
+convo_description_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[1]'
 
-    # messenger convo history
-    message_history_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[2]'
-    convo_description_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/div/div[1]'
+# default
+# file_upload_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div/div[1]/div/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div/div[3]/div[1]/div/div'
 
-    # default
-    # file_upload_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div/div[1]/div/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div/div[3]/div[1]/div/div'
-
-    # for pages with send products button (whaletea)
-    file_upload_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div/div[3]/div[2]/div/div'
-
-
-
+#HXL
+file_upload_button_xpath = '/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div/div[3]/div[2]/div'
