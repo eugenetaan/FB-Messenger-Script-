@@ -60,8 +60,8 @@ def get_status(merchant_name):
     total_with_issues = sum(tracker['Message Status'].str.contains('cannot.*', case=False)) + sum(
         tracker['Message Status'].str.contains('Unable.*')) + sum(tracker['Message Status'].str.contains('No .*'))
     Est_days_left = (total - total_sent) / 150
-    print(
-        f'Total sent across all sessions is {total_sent} out of {total}. Unable to send {total_with_issues} users. Estimated days left is {Est_days_left}')
+    users_left = total - total_sent - total_with_issues
+    print(f'Total sent across all sessions is {total_sent} out of {total}. Unable to send {total_with_issues} users. {users_left} users left. Estimated days left is {Est_days_left}')
 
 # get_status('WhaleTea')
 
