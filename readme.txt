@@ -10,6 +10,8 @@ If unsure please read the code or google / read documentation.
 For equipment a windows machine would be better as the windows version of the code is able to directly control the GUI while Mac version clicks on coordinates on the screen,
 Hence for different macs coordinates will need to be rewritten.
 
+Both OS can run the same script using the OS variable in the variables file.
+
 
 #-------------------------Pre Broadcast ----------------------------------------------------------#
 Customer Success / Service and Marketing will generally be contacting you to broadcast. Theres a excel sheet for them to fill up and for you to update namely, Merchant Broadcasting Requests.
@@ -24,12 +26,10 @@ Head over to the CSV processing file and run the code to sort and combine (if ap
 
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update into database before broadcasting can start.
 
-
-
 #---------------------Broadcasting---------------------------------------------------------#
 Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it. At the same time ensure that your FB Business Suite UI is the same as what is coded for as FB might overhaul the UI and you might have to change some parts of the code.
 
-Currently 2 versions of the FB Ui is coded for you can try to see if it works for you.
+Currently 2 versions of the FB Ui is coded but the old layout version has been deprecated.
 
 Next update the merchant name, the CSV you are sending from and the number of users to send to (capped at 150 / day due to FB regulations, not a hard cap but try not to go above 250-300 a day). Also fill in the message and imgs to be sent.
 
@@ -51,6 +51,14 @@ Sending too many of the same link will cause message to not be sent and all prev
 
 Any additional upgrades is welcome and you can push to your own github repo :). 
 (idea for you to input all merchants and text at once and the script will go down the list)
+
+
+#-------------Variables control file -----------------------------------------------#
+OS - to delcare os type for which send img function to be used
+QR_code - for promotions requiring QR code 
+testing - use pre written dictionary to test dataset
+manual_mode - for FB text boxes that are unable to be automated ie aria autocomplete fields instead of textarea fields
+user - which account to be used, update in username_pw file as well
 
 
 
