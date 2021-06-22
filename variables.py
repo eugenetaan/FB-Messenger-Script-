@@ -1,4 +1,5 @@
 chromedriver_path = 'C:/Program Files/chromedriver'
+OS = 'Windows'       # accepts Mac and Windows os (Capital - case sensitive)
 QR_Code = False      # For non campaign broadcast
 testing = False         # Use bobs cafe to test
 manual_mode = False      # For instances where unable to automate typing into textbox, sending images (eg Aria Autocomplete fields)
