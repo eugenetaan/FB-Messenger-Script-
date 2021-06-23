@@ -19,10 +19,9 @@ Both OS can run the same script using the OS variable in the variables file.
 * selenium
 * qrcode
 * PyAutoIt (Windows)
-* PyAutoGui (Mac)
+* PyAutoGui (Mac) 
 
-
-
+\
 
 
 ### Pre Broadcast ###
