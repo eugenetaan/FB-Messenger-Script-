@@ -56,8 +56,9 @@ Any additional upgrades is welcome and you can push to your own github repo :).
 
 
 ### Variables control file ###
-* OS - to delcare os type for which send img function to be used \n
+* OS - to delcare os type for which send img function to be used 
 * QR_code - for promotions requiring QR code 
 * testing - use pre written dictionary to test dataset
 * manual_mode - for FB text boxes that are unable to be automated ie aria autocomplete fields instead of textarea fields
 * user - which account to be used, update in username_pw file as well
+* chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
