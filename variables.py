@@ -1,18 +1,11 @@
 import os
 
 chromedriver_path = 'C:/Program Files/chromedriver'
-OS = 'Windows'       # accepts Mac and Windows os (case sensitive)
-QR_Code = False      # For non campaign broadcast
-testing = False           # Use bobs cafe to test
-manual_mode = False     # For instances where unable to automate typing into textbox, sending images (eg Aria Autocomplete fields)
-user = "Eugene"          # Diff user acc to switch between YiKai and own acc
-=======
 OS = 'Windows'       # accepts Mac and Windows os comment out import pyautoit if Mac (Capital - case sensitive)
 QR_Code = False      # For non campaign broadcast
 testing = False         # Use bobs cafe to test
 manual_mode = False      # For instances where unable to automate typing into textbox, sending images (eg Aria Autocomplete fields)
 user = "YK"             # Diff user acc to switch between YiKai and own acc
->>>>>>> 69f35a493ed345b71d1424f9e87ca51e6380ab02
 chatbox_element = 'textarea'  # accept textarea and div (div chatbox is unable to linebreak)
 
 #-------For Desktop with D drive -------------------------------------------------------------------------------------
