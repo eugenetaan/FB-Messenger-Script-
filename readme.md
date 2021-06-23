@@ -22,8 +22,12 @@ Both OS can run the same script using the OS variable in the variables file.
 * PyAutoGui (Mac)
 
 
+
+
+
 ### Pre Broadcast ###
 Customer Success / Service and Marketing will generally be contacting you to broadcast. Theres a excel sheet for them to fill up and for you to update namely, Merchant Broadcasting Requests.
+
 
 
 ### Generation of CSVs ###
@@ -35,6 +39,7 @@ Head over to the CSV processing file and run the code to sort and combine (if ap
 
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update into database before broadcasting can start.
 
+
 ### Broadcasting ###
 Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it. At the same time ensure that your FB Business Suite UI is the same as what is coded for as FB might overhaul the UI and you might have to change some parts of the code.
 
@@ -45,6 +50,7 @@ Next update the merchant name, the CSV you are sending from and the number of us
 Sending generally takes anywhere from 50mins to 1hr20mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast.
 
 Update excel sheet if broadcast is completed / any progress.
+
 
 
 ### Additional Good to Know ###
@@ -60,6 +66,7 @@ Sending too many of the same link will cause message to not be sent and all prev
 
 Any additional upgrades is welcome and you can push to your own github repo :). 
 (idea for you to input all merchants and text at once and the script will go down the list)
+
 
 
 ### Variables control file ###
