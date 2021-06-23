@@ -14,6 +14,13 @@ Hence for different macs coordinates will need to be rewritten.
 
 Both OS can run the same script using the OS variable in the variables file.
 
+#### Required Libraries (not in Python Standard Library) ####
+* pandas
+* selenium
+* qrcode
+* PyAutoIt (Windows)
+* PyAutoGui (Mac)
+
 
 ### Pre Broadcast ###
 Customer Success / Service and Marketing will generally be contacting you to broadcast. Theres a excel sheet for them to fill up and for you to update namely, Merchant Broadcasting Requests.
