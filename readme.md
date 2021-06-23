@@ -18,7 +18,7 @@ Both OS can run the same script using the OS variable in the variables file.
 * pandas
 * selenium
 * qrcode
-* PyAutoIt (Windows)
+* PyAutoIt (Windows) - Comment out import statement if using Mac
 * PyAutoGui (Mac)   
 
 
