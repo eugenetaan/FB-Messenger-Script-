@@ -1,4 +1,4 @@
-# This is a script using selenium to broadcast messages to FB users using a FB Page (Business Suite) #
+## This is a script using selenium to broadcast messages to FB users using a FB Page (Business Suite) ##
 
 ## Developed for AImazing ##
 
@@ -55,7 +55,7 @@ Any additional upgrades is welcome and you can push to your own github repo :).
 (idea for you to input all merchants and text at once and the script will go down the list)
 
 
-## Variables control file ##
+### Variables control file ###
 OS - to delcare os type for which send img function to be used
 QR_code - for promotions requiring QR code 
 testing - use pre written dictionary to test dataset
