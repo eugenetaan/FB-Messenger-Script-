@@ -6,32 +6,15 @@ Automate broadcasting of messages/promotions through FB Business Suite to Aimazi
 ## Description ##
 This is a script using selenium to broadcast messages through a FB Page to a list of relevant customers. Selenium was used for the script as there is no relevant API available for messenger broadcast at the time of development.
 
-The script is split into 2 parts, generation of processed CSV and broadcasting.
+The general flow of events would look like
+Broadcast Request (Customer Service/Success) -->  Generation and cleaning of CSVs --> Broadcast --> Post Broadcast Updates 
 
-In order to execute this broadcast smoothly, you should have a fair understanding of python and selenium, as well as pandas.
-Also a basic understanding of HTML, CSS structure is good to have but not neccessary
+The script will be used for 2 parts, generation of processed CSVs and broadcasting. 
 
-If unsure please read the code or google / read documentation.
-
-For equipment a windows machine would be better as the windows version of the code is able to directly control the GUI while Mac version clicks on coordinates on the screen,
-Hence for different macs coordinates will need to be rewritten.
-
-Both OS can run the same script using the OS variable in the variables file.
-
-#### Required Libraries (not in Python Standard Library) ####
-* pandas
-* selenium
-* qrcode
-* PyAutoIt (Windows) - Comment out import statement if using Mac
-* PyAutoGui (Mac)   
-
-
-### Pre Broadcast ###
+### Broadcast Request ###
 Customer Success / Service and Marketing will generally be contacting you to broadcast. Theres a excel sheet for them to fill up and for you to update namely, Merchant Broadcasting Requests.
 
-
-
-### Generation of CSVs ###
+### Generation and cleaning of CSVs ###
 For generation of CSVs you would want to use the csv_processing file and the variables file.
 Firstly, query the list of customers from the AImazing Database and download it as a csvs. Do take note that for merchants with different outlets eg. Whaletea you will need to query and download multiple csvs.
 
@@ -50,8 +33,9 @@ Next update the merchant name, the CSV you are sending from and the number of us
 
 Sending generally takes anywhere from 50mins to 1hr20mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast.
 
-Update excel sheet if broadcast is completed / any progress.
 
+### Post-Broadcast ###
+Update excel sheet upon completion of the broadcast for the day.
 
 
 ### Additional Good to Know ###
@@ -68,6 +52,14 @@ Sending too many of the same link will cause message to not be sent and all prev
 Any additional upgrades is welcome and you can push to your own github repo :). 
 (idea for you to input all merchants and text at once and the script will go down the list)
 
+
+## Requirements ##
+#### Required Libraries (not in Python Standard Library) ####
+* pandas
+* selenium
+* qrcode
+* PyAutoIt (Windows) - Comment out this import statement if using Mac
+* PyAutoGui (Mac)   
 
 
 ### Variables control file ###
