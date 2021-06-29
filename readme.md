@@ -57,17 +57,17 @@ Update excel sheet upon completion of the broadcasts for the day.
 
 
 #### Additional Info ####
-In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
+* In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
 
-Functions in the CSV_processing file including get status which will return a more detailed progress report. 
+* Functions in the CSV_processing file including get status which will return a more detailed progress report. 
 
-There might be error occuring when duplicates are being sent due to the first index in the list somehow registering as a different number. Running the code again usually solves the issue. Else change the csv file directly.
+* There might be error occuring when duplicates are being sent due to the first index in the list somehow registering as a different number. Running the code again usually solves the issue. Else change the csv file directly.
 
-Compressing images before sending to reduce broadcasting time duration
+* Compressing images before sending to reduce broadcasting time duration
 
-Sending too many of the same link will cause message to not be sent and all previous messages to be revoked. So try to avoid using links where possible
+* Sending too many of the same link will cause message to not be sent and all previous messages to be revoked. So try to avoid using links where possible
 
-For messages where different text is used for different customers eg extension of expiry date you can make use of some functions eg.
+* For messages where different text is used for different customers eg extension of expiry date you can make use of some functions eg.
 
 In variables.py
 ```
@@ -89,7 +89,7 @@ def generate_new_exp_date_text(promotion_text):
 enter_text(generate_new_exp_date_text(promotion_text))
 ```
 
-This method can be used for other dynamic text replacement as well eg customer names.
+  This method can be used for other dynamic text replacement as well eg customer names.
 
 ### Variables File ###
 #### Controlling Variables in variables file ####
