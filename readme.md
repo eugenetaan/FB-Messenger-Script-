@@ -53,6 +53,8 @@ Compressing images before sending to reduce broadcasting time duration
 
 Sending too many of the same link will cause message to not be sent and all prev messages to be revoked.
 
+In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
+
 #### Controlling Variables in variables file ####
 * OS - to delcare os type for which send img function to be used 
 * QR_code - for promotions requiring QR code 
