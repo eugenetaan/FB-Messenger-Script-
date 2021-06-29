@@ -29,6 +29,7 @@ QR Code will be required for promotions that are limited to current AImazing Cus
 
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update the UUIDs into the database before broadcasting can start.
 
+The initial processed csv will be stored in its own subfolder, however upon broadcasting a new tracker csv will be created and stored in a different subfolder
 
 #### Broadcasting ####
 1. Before broadcasting, you will need to ensure that the XPaths eg <br>`xpath='/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[1]' `<br> and CSS selectors eg <br> `chatbox = driver.find_element_by_css_selector('textarea[placeholder="Write a reply…"]')`<br> are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and right click and copy full xpath to compare xpath. 
