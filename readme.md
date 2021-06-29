@@ -6,6 +6,10 @@ Automate broadcasting of messages/promotions through FB Business Suite to releva
 ## Description ##
 This is a script using selenium to broadcast messages through a FB Page to a list of relevant customers. Selenium was used for the script as there is no relevant API available for messenger broadcast to specific customers at the time of development.
 
+The video is an example of how the script works.
+
+https://user-images.githubusercontent.com/80191549/123770789-23919100-d8fd-11eb-82f3-788dcf6dbf8b.mp4
+
 The general flow of events would look like this: <br>
 Broadcast Request (Customer Service/Success) -->  Generation and cleaning of CSVs --> Broadcast --> Post Broadcast Updates 
 
@@ -30,6 +34,8 @@ If a qr code is required, you will need to send the processed CSV to Xavier Liew
 1. Before broadcasting, you will need to ensure that the XPaths eg <br>`xpath='/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[1]' `<br> and CSS selectors eg <br> `chatbox = driver.find_element_by_css_selector('textarea[placeholder="Write a reply…"]')`<br> are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and right click and copy full xpath to compare xpath. 
 2. Next update the merchant name, the CSV you are sending from and the number of users to send to (capped at 150 / day due to FB regulations, not a hard cap but try not to go above 250-300 a day). Also fill in the message and imgs to be sent. 
 3. Run the script
+4. Navigate to merchant facebook page inbox
+5. Broadcast begins
 
 Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast. 
 
