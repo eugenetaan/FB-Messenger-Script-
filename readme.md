@@ -101,7 +101,7 @@ enter_text(generate_new_exp_date_text(promotion_text))
 * user - which account to be used, update in username_pw file as well
 * chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
   * textarea elements look like this <br> `<textarea type="text" class="_1p7p _5id1 _4dv_ _58al uiTextareaAutogrow" placeholder="Write a message…"></textarea>`
-  * div elements look like this <br> `<div class="_1p1v" id="placeholder-bjaas" style="white-space: pre-wrap;">Write a reply…</div>`<br> or this <br> `<div aria-autocomplete="list" aria-controls="js_353" aria-describedby="placeholder-bjaas" aria-expanded="false" aria-label="Write a reply…" class="notranslate _5rpu" contenteditable="true" role="combobox" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"><div data-contents="true"><div class="" data-block="true" data-editor="bjaas" data-offset-key="c8uua-0-0"><div data-offset-key="c8uua-0-0" class="_1mf _1mj"><span data-offset-key="c8uua-0-0"><br data-text="true"></span></div></div></div></div>`
+  * div elements look like this <br> `<div aria-autocomplete="list" aria-controls="js_2e7" aria-describedby="placeholder-7tij6" aria-expanded="false" aria-label="Write a reply…" class="notranslate _5rpu" contenteditable="true" role="combobox" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;">`
 
 #### Text and image format ####
 
