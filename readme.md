@@ -23,7 +23,7 @@ Customer Success / Service and Marketing will generally be contacting you to bro
 Csvs will be sorted by customers with the most lifetime visits
 QR Code will be required for promotions that are limited to current AImazing Customers / Promotions that can only be reedemed once
 
-If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update into database before broadcasting can start.
+If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update the UUIDs into the database before broadcasting can start.
 
 
 #### Broadcasting ####
@@ -39,7 +39,7 @@ Most of the xpath variables will be found in the variables file however there is
 `user = driver.find_element_by_xpath(f'/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[{customer_position}]')`
 
 #### Post-Broadcast ####
-Update excel sheet upon completion of the broadcast for the day.
+Update excel sheet upon completion of the broadcasts for the day.
 
 
 #### Additional Good to Know ####
@@ -75,3 +75,5 @@ In the event the facebook UI change drastically you will need to restructure the
 * PyAutoGui (Mac)   
 
 The script requires a facebook account with access to the relevant FB page. Insert the FB account credentials under username_pw.py before starting broadcast
+
+PyAutoIt is able to directly control the windows GUI but for Mac Users PyAutoGui works by clicking at predetermined coordinates on the screen. Hence different Mac users may need to reconfigure the send_image_mac function for their own screens.
