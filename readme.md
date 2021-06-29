@@ -15,11 +15,13 @@ The script will be used for 2 parts, generation of processed CSVs and broadcasti
 Customer Success / Service and Marketing will generally be contacting you to broadcast. Theres a excel sheet for them to fill up and for you to update namely, Merchant Broadcasting Requests.
 
 #### Generation and cleaning of CSVs ####
-For generation of CSVs you would want to use the csv_processing file and the variables file.
-Firstly, query the list of customers from the AImazing Database and download it as a csvs. Do take note that for merchants with different outlets eg. Whaletea you will need to query and download multiple csvs.
+1. Query the list of customers from the AImazing Database and download it in the csv format. Do take note that for merchants with different outlets eg. Whaletea you will need to query and download multiple csvs.
 
-Next head to the variable files and in the original CSVs array, place all the filepaths of the merchant and fill in the merchant name.
-Head over to the CSV processing file and run the code to sort and combine (if applicable) the csvs by customers with the most lifetime visits and also if the merchant is running an AImazing promotion, generate a Unique identifier or UUID which will be used to generate a QR code for the customer.
+2. Next head to the variable files and place all the filepaths of the downloaded CSVs in the original CSVs array as well as fill in the merchant name.
+
+3.Head over to the CSV processing file and run the code to sort and combine (if applicable) the csvs
+
+by customers with the most lifetime visits and also if the merchant is running an AImazing promotion, generate a Unique identifier or UUID which will be used to generate a QR code for the customer.
 
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update into database before broadcasting can start.
 
