@@ -4,7 +4,7 @@
 Automate broadcasting of messages/promotions through FB Business Suite to relevant Aimazing Customers 
 
 ## Description ##
-This is a script using selenium to broadcast messages through a FB Page to a list of relevant customers. Selenium was used for the script as there is no relevant API available for messenger broadcast to specific customers at the time of development.
+This is a script using selenium to broadcast messages through a FB Page to a list of relevant customers. Selenium is used for the script as there is no relevant API available for messenger broadcast to specific customers at the time of development.
 
 The video is an example of how the script works.
 
