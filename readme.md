@@ -38,11 +38,16 @@ The initial processed csv will be stored in its own subfolder, however upon broa
 4. Navigate to merchant facebook page inbox
 5. Broadcast begins
 
-Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast. 
+##### Broadcasting Info #####
+* Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast. 
 
-Xpaths requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any slight UI changes by FB may break it. On the other hand CSS Selectors tend to have less issues. However Xpaths is still used as certain functions eg check_duplicate makes use of the li[@] element in the xpath to iterate through the list, moreover some elements do not have any styling and hence CSS selector cannot be used.
+* Xpaths requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any slight UI changes by FB may break it. On the other hand CSS Selectors tend to have less issues. However Xpaths is still used as certain functions eg check_duplicate makes use of the li[@] element in the xpath to iterate through the list, moreover some elements do not have any styling and hence CSS selector cannot be used.
 
-Most of the xpath variables will be found in the variables file however there is an f string variable in the actual script so remember to change this as well <br> 
+* If duplicate names are encountered on FB:
+  * QR code required: Script will send to the number of duplicates in the csv file as the QR code generation requires a unique UUID from each customer
+  * QR not required: Script will send to all duplicates found on facebook 
+
+* Most of the xpath variables will be found in the variables file however there is an f string variable in the actual script so remember to change this as well <br> 
 ```
 user = driver.find_element_by_xpath(f'/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[{customer_position}]')
 ```
@@ -123,6 +128,10 @@ Promotion text is limited to using only ascii characters so theres no emoji/bold
 ```
 imgs = ['C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
 ```
+
+## Limitations ##
+
+
 
 ## Requirements ##
 #### Required Libraries (not in Python Standard Library) ####
