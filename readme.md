@@ -21,13 +21,13 @@ Customer Success / Service and Marketing will generally be contacting you to bro
 
 
 Csvs will be sorted by customers with the most lifetime visits
-QR Code will be required] for promotions that are limited to current AImazing Customers / Promotions that can only be reedemed once
+QR Code will be required for promotions that are limited to current AImazing Customers / Promotions that can only be reedemed once
 
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update into database before broadcasting can start.
 
 
 #### Broadcasting ####
-1. Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it.
+1. Before broadcasting, you will need to ensure that the XPaths eg `xpath='/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[1]' ` / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it.
 2. Next update the merchant name, the CSV you are sending from and the number of users to send to (capped at 150 / day due to FB regulations, not a hard cap but try not to go above 250-300 a day). Also fill in the message and imgs to be sent. 
 3. Run the script
 
@@ -48,6 +48,14 @@ Compressing images before sending to reduce broadcasting time duration
 
 Sending too many of the same link will cause message to not be sent and all prev messages to be revoked.
 
+#### Controlling Variables in variables file ####
+* OS - to delcare os type for which send img function to be used 
+* QR_code - for promotions requiring QR code 
+* testing - use pre written dictionary to test dataset
+* manual_mode - for FB text boxes that are unable to be automated ie aria autocomplete fields instead of textarea fields
+* user - which account to be used, update in username_pw file as well
+* chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
+
 
 ## Requirements ##
 #### Required Libraries (not in Python Standard Library) ####
@@ -57,11 +65,4 @@ Sending too many of the same link will cause message to not be sent and all prev
 * PyAutoIt (Windows) - Comment out this import statement if using Mac
 * PyAutoGui (Mac)   
 
-
-### Variables control file ###
-* OS - to delcare os type for which send img function to be used 
-* QR_code - for promotions requiring QR code 
-* testing - use pre written dictionary to test dataset
-* manual_mode - for FB text boxes that are unable to be automated ie aria autocomplete fields instead of textarea fields
-* user - which account to be used, update in username_pw file as well
-* chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
+The script requires a facebook account with access to a page
