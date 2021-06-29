@@ -25,8 +25,8 @@ Customer Success / Service and Marketing will generally be contacting you to bro
 
 
 Csvs will be sorted by customers with the most lifetime visits
-QR Code will be required for promotions that are limited to current AImazing Customers / Promotions that can only be reedemed once
 
+QR Code will be required for promotions that are limited to current AImazing Customers / Promotions that can only be reedemed once
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update the UUIDs into the database before broadcasting can start.
 
 The initial processed csv will be stored in its own subfolder, however upon broadcasting a new tracker csv will be created and stored in a different subfolder
@@ -39,15 +39,16 @@ The initial processed csv will be stored in its own subfolder, however upon broa
 5. Broadcast begins
 
 ##### Broadcasting Info #####
-* Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast. 
+Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast. 
 
-* Xpaths requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any slight UI changes by FB may break it. On the other hand CSS Selectors tend to have less issues. However Xpaths is still used as certain functions eg check_duplicate makes use of the li[@] element in the xpath to iterate through the list, moreover some elements do not have any styling and hence CSS selector cannot be used.
+Xpaths requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any slight UI changes by FB may break it. On the other hand CSS Selectors tend to have less issues. However Xpaths is still used as certain functions eg check_duplicate makes use of the li[@] element in the xpath to iterate through the list, moreover some elements do not have any styling and hence CSS selector cannot be used.
 
-* If duplicate names are encountered on FB:
+If duplicate names are encountered on FB:
   * QR code required: Script will send to the number of duplicates in the csv file as the QR code generation requires a unique UUID from each customer
   * QR not required: Script will send to all duplicates found on facebook 
 
-* Most of the xpath variables will be found in the variables file however there is an f string variable in the actual script so remember to change this as well <br> 
+
+Most of the xpath variables will be found in the variables file however there is an f string variable in the actual script so remember to change this as well <br> 
 ```
 user = driver.find_element_by_xpath(f'/html/body/div[1]/div[1]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/div[1]/div/div/div/li[{customer_position}]')
 ```
@@ -57,17 +58,17 @@ Update excel sheet upon completion of the broadcasts for the day.
 
 
 #### Additional Info ####
-* In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
+In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
 
-* Functions in the CSV_processing file including get status which will return a more detailed progress report. 
+Functions in the CSV_processing file including get status which will return a more detailed progress report. 
 
-* There might be error occuring when duplicates are being sent due to the first index in the list somehow registering as a different number. Running the code again usually solves the issue. Else change the csv file directly.
+There might be error occuring when duplicates are being sent due to the first index in the list somehow registering as a different number. Running the code again usually solves the issue. Else change the csv file directly.
 
-* Compressing images before sending to reduce broadcasting time duration
+Compressing images before sending to reduce broadcasting time duration
 
-* Sending too many of the same link will cause message to not be sent and all previous messages to be revoked. So try to avoid using links where possible
+Sending too many of the same link will cause message to not be sent and all previous messages to be revoked. So try to avoid using links where possible
 
-* For messages where different text is used for different customers eg extension of expiry date you can make use of some functions eg.
+For messages where different text is used for different customers eg extension of expiry date you can make use of some functions eg.
 
 In variables.py
 ```
