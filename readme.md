@@ -33,7 +33,7 @@ If a qr code is required, you will need to send the processed CSV to Xavier Liew
 
 Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast. 
 
-Xpaths requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any slight UI changes by FB may break it. On the other hand CSS Selectors tend to have less issues.
+Xpaths requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any slight UI changes by FB may break it. On the other hand CSS Selectors tend to have less issues. However Xpaths is still used as certain functions eg check_duplicate makes use of the li[@] element in the xpath to iterate through the list, moreover some elements do not have any styling and hence CSS selector cannot be used.
 
 Most of the xpath variables will be found in the variables file however there is an f string variable in the actual script so remember to change that as well
 
