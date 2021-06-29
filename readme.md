@@ -126,4 +126,4 @@ imgs = ['C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg'
 The script requires a facebook account with access to the relevant FB page. Insert the FB account credentials under username_pw.py before starting broadcast
 
 #### Mac Users ####
-PyAutoIt is able to directly control the windows GUI but for Mac Users PyAutoGui works by clicking at predetermined coordinates on the screen. Hence different Mac users may need to reconfigure the send_image_mac function for their own screens by using `pyautoit.position()`
+PyAutoIt is able to directly control the windows GUI but for Mac Users PyAutoGui works by clicking at predetermined coordinates on the screen. Hence different Mac users may need to reconfigure the send_image_mac function for their own screens by using `pyautogui.position()`
