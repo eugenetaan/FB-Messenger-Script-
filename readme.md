@@ -75,9 +75,9 @@ def generate_new_exp_date_text(promotion_text):
 enter_text(generate_new_exp_date_text(promotion_text))
 ```
 
+This method can be used for other dynamic text replacement as well eg customer names.
 
-
-Func
+### Variables File ###
 #### Controlling Variables in variables file ####
 * OS - to delcare os type for which send img function to be used 
 * QR_code - for promotions requiring QR code 
@@ -88,6 +88,32 @@ Func
   * textarea elements look like this <br> `<textarea type="text" class="_1p7p _5id1 _4dv_ _58al uiTextareaAutogrow" placeholder="Write a message…"></textarea>`
   * div elements look like this <br> `<div class="_1p1v" id="placeholder-bjaas" style="white-space: pre-wrap;">Write a reply…</div>`<br> or this <br> `<div aria-autocomplete="list" aria-controls="js_353" aria-describedby="placeholder-bjaas" aria-expanded="false" aria-label="Write a reply…" class="notranslate _5rpu" contenteditable="true" role="combobox" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"><div data-contents="true"><div class="" data-block="true" data-editor="bjaas" data-offset-key="c8uua-0-0"><div data-offset-key="c8uua-0-0" class="_1mf _1mj"><span data-offset-key="c8uua-0-0"><br data-text="true"></span></div></div></div></div>`
 
+#### Text and image format ####
+
+* Promotion Text is formatted such that even item in the list is one line, to create messages with multiple linebreaks just use an empty string "", eg:
+```
+'New safety measures got you down? Turn that frown upside down with this promo. Get 30% off for Osmanthus Honey Green Tea on your next visit AND enjoy 5% cashback',
+            '',
+            'Just present the QR Code below to claim your voucher!',
+            '',
+            'Valid for redemption at our outlets',
+            '- Lot One Shoppers Mall #B1-25',
+            '-Jurong Point #01-45/46  (10am - 11.30pm)',
+            '-HDB HUB Toa Payoh Central Lor 6, Blk 190 #01-536',
+            '-Rivervale Mall #01-14',
+            '-BLK 407 Ang Mo Kio Ave 10 #01-747',
+            '',
+            '*Valid till 16 June',
+            '*Max 2 cups per transaction / per visit for every customers',
+            '*Not applicable on Weekends',
+            ]
+```
+Promotion text is limited to using only ascii characters so theres no emoji/bold/italic letters support
+
+* For images just insert image filepath eg:
+```
+imgs = ['C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
+```
 
 ## Requirements ##
 #### Required Libraries (not in Python Standard Library) ####
