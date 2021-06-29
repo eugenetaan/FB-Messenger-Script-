@@ -11,10 +11,10 @@ Broadcast Request (Customer Service/Success) -->  Generation and cleaning of CSV
 
 The script will be used for 2 parts, generation of processed CSVs and broadcasting. 
 
-### Broadcast Request ###
+#### Broadcast Request ####
 Customer Success / Service and Marketing will generally be contacting you to broadcast. Theres a excel sheet for them to fill up and for you to update namely, Merchant Broadcasting Requests.
 
-### Generation and cleaning of CSVs ###
+#### Generation and cleaning of CSVs ####
 For generation of CSVs you would want to use the csv_processing file and the variables file.
 Firstly, query the list of customers from the AImazing Database and download it as a csvs. Do take note that for merchants with different outlets eg. Whaletea you will need to query and download multiple csvs.
 
@@ -24,7 +24,7 @@ Head over to the CSV processing file and run the code to sort and combine (if ap
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update into database before broadcasting can start.
 
 
-### Broadcasting ###
+#### Broadcasting ####
 Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it. At the same time ensure that your FB Business Suite UI is the same as what is coded for as FB might overhaul the UI and you might have to change some parts of the code.
 
 Currently 2 versions of the FB Ui is coded but the old layout version has been deprecated.
@@ -34,11 +34,11 @@ Next update the merchant name, the CSV you are sending from and the number of us
 Sending generally takes anywhere from 50mins to 1hr20mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast.
 
 
-### Post-Broadcast ###
+#### Post-Broadcast ####
 Update excel sheet upon completion of the broadcast for the day.
 
 
-### Additional Good to Know ###
+#### Additional Good to Know ####
 Theres many hidden functions in the CSV_processing file including get status which will return a more detailed progress report. Read the code to find out more
 
 There are also functions to dynamically change a placeholder value in variables promotion text. Read code to find out more
