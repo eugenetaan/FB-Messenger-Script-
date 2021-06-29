@@ -56,11 +56,11 @@ Sending too many of the same link will cause message to not be sent and all prev
 * OS - to delcare os type for which send img function to be used 
 * QR_code - for promotions requiring QR code 
 * testing - use pre written dictionary to test dataset
-* manual_mode - for FB text boxes that are unable to be automated ie aria autocomplete fields instead of textarea fields
+* manual_mode - for FB text boxes that are unable to be automated ie div fields instead of textarea fields
 * user - which account to be used, update in username_pw file as well
 * chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
   * textarea elements look like this <br> `<textarea type="text" class="_1p7p _5id1 _4dv_ _58al uiTextareaAutogrow" placeholder="Write a message…"></textarea>`
-  * div elements look like this <br> `<div class="_1p1v" id="placeholder-bjaas" style="white-space: pre-wrap;">Write a reply…</div>`
+  * div elements look like this <br> `<div class="_1p1v" id="placeholder-bjaas" style="white-space: pre-wrap;">Write a reply…</div>`<br> or this <br> `<div aria-autocomplete="list" aria-controls="js_353" aria-describedby="placeholder-bjaas" aria-expanded="false" aria-label="Write a reply…" class="notranslate _5rpu" contenteditable="true" role="combobox" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"><div data-contents="true"><div class="" data-block="true" data-editor="bjaas" data-offset-key="c8uua-0-0"><div data-offset-key="c8uua-0-0" class="_1mf _1mj"><span data-offset-key="c8uua-0-0"><br data-text="true"></span></div></div></div></div>`
 
 
 ## Requirements ##
