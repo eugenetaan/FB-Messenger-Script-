@@ -6,7 +6,7 @@ Automate broadcasting of messages/promotions through FB Business Suite to Aimazi
 ## Description ##
 This is a script using selenium to broadcast messages through a FB Page to a list of relevant customers. Selenium was used for the script as there is no relevant API available for messenger broadcast at the time of development.
 
-The general flow of events would look like <br>
+The general flow of events would look like this: <br>
 Broadcast Request (Customer Service/Success) -->  Generation and cleaning of CSVs --> Broadcast --> Post Broadcast Updates 
 
 The script will be used for 2 parts, generation of processed CSVs and broadcasting. 
