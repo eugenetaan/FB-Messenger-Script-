@@ -59,6 +59,8 @@ Sending too many of the same link will cause message to not be sent and all prev
 * manual_mode - for FB text boxes that are unable to be automated ie aria autocomplete fields instead of textarea fields
 * user - which account to be used, update in username_pw file as well
 * chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
+  * textarea elements look like this <br> `<textarea type="text" class="_1p7p _5id1 _4dv_ _58al uiTextareaAutogrow" placeholder="Write a message…"></textarea>`
+  * div elements look like this <br> `<div class="_1p1v" id="placeholder-bjaas" style="white-space: pre-wrap;">Write a reply…</div>`
 
 
 ## Requirements ##
