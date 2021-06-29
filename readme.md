@@ -130,10 +130,6 @@ Promotion text is limited to using only ascii characters so theres no emoji/bold
 imgs = ['C:\\Users\\eugen\\PycharmProjects\\FBMessengerScript\\temp_qr_code.jpg']
 ```
 
-## Limitations ##
-
-
-
 ## Requirements ##
 #### Required Libraries (not in Python Standard Library) ####
 * pandas
