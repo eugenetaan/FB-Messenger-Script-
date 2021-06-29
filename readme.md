@@ -51,7 +51,7 @@ There might be error occuring when duplicates are being sent due to the first in
 
 Compressing images before sending to reduce broadcasting time duration
 
-Sending too many of the same link will cause message to not be sent and all prev messages to be revoked.
+Sending too many of the same link will cause message to not be sent and all previous messages to be revoked. So try to avoid using links where possible
 
 In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
 
