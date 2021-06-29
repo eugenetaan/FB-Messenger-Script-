@@ -16,25 +16,22 @@ Customer Success / Service and Marketing will generally be contacting you to bro
 
 #### Generation and cleaning of CSVs ####
 1. Query the list of customers from the AImazing Database and download it in the csv format. Do take note that for merchants with different outlets eg. Whaletea you will need to query and download multiple csvs.
-
 2. Next head to the variable files and place all the filepaths of the downloaded CSVs in the original CSVs array as well as fill in the merchant name.
+3. Head over to the CSV processing file and run the code to clean, sort and combine (if applicable) the csvs
 
-3.Head over to the CSV processing file and run the code to sort and combine (if applicable) the csvs
 
-by customers with the most lifetime visits and also if the merchant is running an AImazing promotion, generate a Unique identifier or UUID which will be used to generate a QR code for the customer.
+Csvs will be sorted by customers with the most lifetime visits
+QR Code will be required] for promotions that are limited to current AImazing Customers / Promotions that can only be reedemed once
 
 If a qr code is required, you will need to send the processed CSV to Xavier Liew or one of the engineers to update into database before broadcasting can start.
 
 
 #### Broadcasting ####
-Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it. At the same time ensure that your FB Business Suite UI is the same as what is coded for as FB might overhaul the UI and you might have to change some parts of the code.
+1.Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it. At the same time ensure that your FB Business Suite UI is the same as what is coded for as FB might overhaul the UI and you might have to change some parts of the code.
+2.Next update the merchant name, the CSV you are sending from and the number of users to send to (capped at 150 / day due to FB regulations, not a hard cap but try not to go above 250-300 a day). Also fill in the message and imgs to be sent.
+3. Run the script
 
-Currently 2 versions of the FB Ui is coded but the old layout version has been deprecated.
-
-Next update the merchant name, the CSV you are sending from and the number of users to send to (capped at 150 / day due to FB regulations, not a hard cap but try not to go above 250-300 a day). Also fill in the message and imgs to be sent.
-
-Sending generally takes anywhere from 50mins to 1hr20mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast.
-
+Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast.
 
 #### Post-Broadcast ####
 Update excel sheet upon completion of the broadcast for the day.
