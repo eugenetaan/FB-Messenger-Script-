@@ -97,7 +97,7 @@ enter_text(generate_new_exp_date_text(promotion_text))
 * OS - to delcare os type for which send img function to be used 
 * QR_code - for promotions requiring QR code 
 * testing - use pre written dictionary to test dataset
-* manual_mode - for FB text boxes that use div elements as the linebreak wont work and the only way to preserve message format with linebreaks is manual copy paste (single line messages or messages that can be broken up into two speech bubbles don't require manual mode 
+* manual_mode - for FB text boxes that use div elements as the linebreak wont work and the only way to preserve message format with linebreaks is manual copy paste (single line messages or messages that can be broken up into two speech bubbles don't require manual mode )
 * user - which account to be used, update in username_pw file as well
 * chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
   * textarea elements look like this <br> `<textarea type="text" class="_1p7p _5id1 _4dv_ _58al uiTextareaAutogrow" placeholder="Write a message…"></textarea>`
