@@ -42,10 +42,10 @@ Most of the xpath variables will be found in the variables file however there is
 Update excel sheet upon completion of the broadcasts for the day.
 
 
-#### Additional Good to Know ####
-Functions in the CSV_processing file including get status which will return a more detailed progress report. 
+#### Additional Info ####
+In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
 
-There are also functions to dynamically change a placeholder value in variables promotion text. 
+Functions in the CSV_processing file including get status which will return a more detailed progress report. 
 
 There might be error occuring when duplicates are being sent due to the first index in the list somehow registering as a different number. Running the code again usually solves the issue. Else change the csv file directly.
 
@@ -53,8 +53,31 @@ Compressing images before sending to reduce broadcasting time duration
 
 Sending too many of the same link will cause message to not be sent and all previous messages to be revoked. So try to avoid using links where possible
 
-In the event the facebook UI change drastically you will need to restructure the code to the accomodate the new UI
+For messages where different text is used for different customers eg extension of expiry date you can make use of some functions eg.
 
+In variables.py
+```
+promotion_text = [
+            'Dear Customer',
+            'your cashback expiry date has been extended to <new_exp>'
+                          ]
+```
+In FB_Script.py
+```
+def generate_new_exp_date_text(promotion_text):
+    return_text = []
+    for sentence in promotion_text:
+        return_text.append(sentence.replace('<new_exp>', tracker['expiry_date'][i]))
+    print(return_text)
+    return return_text
+  
+# in the sending text block
+enter_text(generate_new_exp_date_text(promotion_text))
+```
+
+
+
+Func
 #### Controlling Variables in variables file ####
 * OS - to delcare os type for which send img function to be used 
 * QR_code - for promotions requiring QR code 
