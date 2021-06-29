@@ -59,7 +59,7 @@ In the event the facebook UI change drastically you will need to restructure the
 * OS - to delcare os type for which send img function to be used 
 * QR_code - for promotions requiring QR code 
 * testing - use pre written dictionary to test dataset
-* manual_mode - for FB text boxes that are unable to be automated ie div fields instead of textarea fields
+* manual_mode - for FB text boxes that use div elements as the linebreak wont work and the only way to preserve message format is manual copy paste
 * user - which account to be used, update in username_pw file as well
 * chatbox_element - used to determine if the chatbox uses a textarea element or div element for input
   * textarea elements look like this <br> `<textarea type="text" class="_1p7p _5id1 _4dv_ _58al uiTextareaAutogrow" placeholder="Write a message…"></textarea>`
