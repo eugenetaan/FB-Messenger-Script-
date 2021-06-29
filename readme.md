@@ -27,10 +27,8 @@ If a qr code is required, you will need to send the processed CSV to Xavier Liew
 
 
 #### Broadcasting ####
-1.Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it.
-
-2.Next update the merchant name, the CSV you are sending from and the number of users to send to (capped at 150 / day due to FB regulations, not a hard cap but try not to go above 250-300 a day). Also fill in the message and imgs to be sent. 
-
+1. Before broadcasting, you will need to ensure that the XPaths / CSS selectors (usually CSS selectors won't have issues) are working for the merchant facebook page. To do this use chrome dev tools to inspect the elements stated in the variables file and click on copy full xpath to compare. This requires regular maintenance as full xpath is the absolute position of the element in the HTML file structure and any maintenance / update by FB may break it.
+2. Next update the merchant name, the CSV you are sending from and the number of users to send to (capped at 150 / day due to FB regulations, not a hard cap but try not to go above 250-300 a day). Also fill in the message and imgs to be sent. 
 3. Run the script
 
 Sending generally takes anywhere from 40mins to 1hr10mins for 150 users, depending on img file size and complexity of message as well as rate of error. Generally there will be 5% error rate for reasons such as user not found, name in DB is not full name, etc etc. Look at code for more details. Do take note that you will be unable to use your machine effectively during broadcast.
