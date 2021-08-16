@@ -18,8 +18,7 @@ import autoit
 import pyautogui
 
 def test_input_bobs_cafe():
-    d = { 'first_name' : ['Eugene', 'Ng', 'Xavier', "Yi Kai", 'Tin', 'Gabriel', 'Bai', 'Chih', 'Tim', 'Zhen Ye'], 'last_name' : [ 'Tan', 'Zheng Wei', 'Chin', 'Kong', 'En Hao', 'Lee', 'Shun Yao', 'Ying Ho', 'Lorenz', 'Neo'], 'token' : ['FB_V-12_6438e8dd-2988-45e7-9f64-d80f666fdd6b', 'FB_V-13_41934190-3835-476c-8753-0307f206abff', 'FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28',
-        'FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28','FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28','FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28','FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28','FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28','FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28','FB_V-14_3338f930-0c27-477a-9c95-928e64b95a28']}
+    d = { 'first_name' : ['Eugene'], 'last_name' : [ 'Tan'], 'token' : ['FB_V-12_6438e8dd-2988-45e7-9f64-d80f666fdd6b']}
     global tracker
     tracker = pd.DataFrame(data=d)
     tracker['Name'] = tracker['first_name'] + ' ' + tracker['last_name']
